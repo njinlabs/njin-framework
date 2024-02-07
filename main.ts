@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
+import kernel from "./app/start/kernel";
+import routes from "./app/start/routes";
 import server from "./app/start/server";
 import { HandlerContext } from "./app/types/handler_context";
-import routes from "./app/start/routes";
-import kernel from "./app/start/kernel";
 
 const njin = server();
 
@@ -22,7 +22,7 @@ njin.handle((app) => {
       logger.error(err);
     }
 
-    next();
+    next(err);
   });
 });
 
