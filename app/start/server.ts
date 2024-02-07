@@ -1,10 +1,30 @@
 import express, { Express } from "express";
+import pino from "pino";
+import { HandlerContext } from "../types/handler_context";
 
-export default function server(callback?: (app: Express) => void) {
+export default function server() {
   const app = express();
   const port = process.env.PORT || 3333;
 
-  if (callback) callback(app);
+  const logger = pino({
+    transport: {
+      target: "pino-pretty",
+    },
+  });
+  const context: HandlerContext = {
+    logger,
+  };
 
-  app.listen(port, () => {});
+  app.set("context", context);
+
+  return {
+    listen: () => {
+      app.listen(port, () => {
+        logger.info("🚀🚀 Njin running on port " + port);
+      });
+    },
+    handle: (handler: (app: Express) => void) => {
+      handler(app);
+    },
+  };
 }
