@@ -1,5 +1,5 @@
 {
-  "name": "create-njin-framework",
+  "name": "njin-framework",
   "version": "1.0.0",
   "description": "Simple NodeJS Framework Based on Express",
   "main": "index.js",
