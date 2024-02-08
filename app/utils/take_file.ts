@@ -1,5 +1,5 @@
+import { File } from "#types/file";
 import { Request } from "express";
-import { File } from "../types/file";
 import fs from "fs";
 import path from "path";
 
@@ -40,7 +40,7 @@ export default function takeFile(
         save: () => {
           fs.copyFileSync(
             item.path,
-            path.join(__dirname, "../../uploads", item.filename)
+            path.resolve(path.join("uploads", item.filename))
           );
         },
       } as File;

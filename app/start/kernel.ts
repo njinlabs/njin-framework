@@ -1,13 +1,13 @@
 import { createId } from "@paralleldrive/cuid2";
 import bodyParser from "body-parser";
 import { Express, NextFunction, Request, Response } from "express";
+import fs from "fs";
 import multer from "multer";
 import path from "path";
-import fs from "fs";
 
 export default function kernel(app: Express) {
   const multerStorage = multer.diskStorage({
-    destination: path.join(__dirname, "../../.tmp"),
+    destination: path.resolve(path.join(".tmp")),
     filename: (_req, _file, cb) => {
       cb(null, createId());
     },

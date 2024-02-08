@@ -1,6 +1,6 @@
+import { HandlerContext } from "#types/handler_context";
 import express, { Express } from "express";
-import pino from "pino";
-import { HandlerContext } from "../types/handler_context";
+import { pino } from "pino";
 
 export default function server() {
   const app = express();
