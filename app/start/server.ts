@@ -1,4 +1,5 @@
 import { HandlerContext } from "#types/handler_context";
+import { PrismaClient } from "@prisma/client";
 import express, { Express } from "express";
 import { pino } from "pino";
 
@@ -11,8 +12,12 @@ export default function server() {
       target: "pino-pretty",
     },
   });
+
+  const prisma = new PrismaClient();
+
   const context: HandlerContext = {
     logger,
+    prisma,
   };
 
   app.set("context", context);

@@ -2,6 +2,7 @@ import server from "#start/server";
 import kernel from "#start/kernel";
 import routes from "#start/routes";
 import exception from "#start/exception";
+import "dotenv/config";
 
 const njin = server();
 
