@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Simple NodeJS Framework Based on Express",
   "main": "index.js",
+  "type": "module",
+  "private": true,
   "scripts": {
     "dev": "nodemon ./main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,13 +13,30 @@
   "license": "MIT",
   "devDependencies": {
     "@types/express": "^4.17.21",
+    "@types/multer": "^1.4.11",
     "nodemon": "^3.0.3",
-    "ts-node": "^10.9.2",
+    "prisma": "^5.9.1",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "@paralleldrive/cuid2": "^2.2.2",
+    "@prisma/client": "^5.9.1",
+    "@vinejs/vine": "^1.7.1",
+    "argon2": "^0.31.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.1",
+    "express": "^5.0.0-beta.1",
+    "multer": "^1.4.5-lts.1",
     "pino": "^8.18.0",
-    "pino-pretty": "^10.3.1"
+    "pino-pretty": "^10.3.1",
+    "vite-node": "^1.2.2"
+  },
+  "imports": {
+    "#start/*": "./app/start/*.js",
+    "#handlers/*": "./app/handlers/*.js",
+    "#types/*": "./app/types/*.js",
+    "#utils/*": "./app/utils/*.js",
+    "#auths/*": "./app/auths/*.js",
+    "#middlewares/*": "./app/middlewares/*.js"
   }
 }
