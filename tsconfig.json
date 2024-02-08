@@ -28,7 +28,9 @@
       "#handlers/*": ["./app/handlers/*.js"],
       "#start/*": ["./app/start/*.js"],
       "#types/*": ["./app/types/*.js"],
-      "#utils/*": ["./app/utils/*.js"]
+      "#utils/*": ["./app/utils/*.js"],
+      "#auths/*": ["./auths/*.js"],
+      "#middlewares/*": ["./middlewares/*.js"]
     }
   }
 }
