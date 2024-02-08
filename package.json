@@ -1,6 +1,6 @@
 {
   "name": "create-njin-framework",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Simple NodeJS Framework Based on Express",
   "main": "index.js",
   "type": "module",
